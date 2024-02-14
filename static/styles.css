@@ -1,0 +1,34 @@
+:root {
+	--website-background: #f0b960;
+	--container-background: #ffffff;
+	--upload-background: #f2f2f2;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--website-background) !important;
+}
+
+.container {
+	background-color: var(--container-background);
+	border: black solid 3px;
+	border-radius: 15px;
+}
+
+.img-area {
+	position: relative;
+	width: 80%;
+	height: 240px;
+	background: var(--upload-background);
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.icon {
+		font-size: 100px;
+	}
+}
+
