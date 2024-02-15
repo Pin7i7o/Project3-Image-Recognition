@@ -4,6 +4,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 import torch
 import openai
 import os
+import config
 
 app = Flask(__name__)
 
@@ -14,8 +15,7 @@ processor = BlipProcessor.from_pretrained("noamrot/FuseCap")
 model = BlipForConditionalGeneration.from_pretrained("noamrot/FuseCap").to(device)
 
 # Load API key for OpenAI
-API_KEY = open("API_KEY", "r").read()
-client = openai.OpenAI(api_key=API_KEY, organization="org-C3HZ989amK6IhNBeinAIDnML")
+client = openai.OpenAI(api_key=config.API_KEY, organization=config.ORG)
 
 UPLOAD_FOLDER = 'images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
